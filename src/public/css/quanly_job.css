@@ -1,0 +1,123 @@
+.avatar_QL {
+    width: 150px;
+    height: 150px;
+    background-color: var(--color-body);
+    align-items: center;
+}
+
+.frame_staffQL:hover {
+    background-color: rgb(201, 196, 196);
+    color: white;
+}
+
+.frame_staffQL {
+    margin: 15px 15px;
+    background-color: white;
+    
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.frame_staffQL .row {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    align-items: center;
+}
+.frame_staffQL .col-12 {
+    display: block;
+    text-align: center;
+}
+.frame_staffQL .p_1 {
+    font-weight: 500;
+}
+
+.frame_staffQL button {
+    border: 1px solid rgb(220, 218, 218);
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+
+.inputWithIcon input[type="button"] {
+    padding-left: 40px;
+  }
+  
+  
+  .inputWithIcon {
+    position: relative;
+  }
+  
+  .inputWithIcon i {
+    position: absolute;
+    left: 15px;
+    top: 0;
+    padding: 6px 8px;
+    color: #aaa;
+    transition: 0.3s;
+  }
+
+  input[type=file]::file-selector-button {
+    margin-right: 5px;
+    border: none;
+    background: #084cdf;
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+  }
+  
+  input[type=file]::file-selector-button:hover {
+    background: #0d45a5;
+  }
+
+  .inputWithIcon2 input[type="submit"] {
+    padding-left: 40px;
+  }
+  
+  
+  .inputWithIcon2 {
+    position: relative;
+  }
+  
+  .inputWithIcon2 i {
+    position: absolute;
+    left: -2px;
+    top: 0;
+    padding: 6px 8px;
+    color: #aaa;
+    transition: 0.3s;
+  }
+
+  .titleTTNSQL {
+    background-color: var(--color-bl);
+    height: 42px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  .titleTTNSQL div p {
+    margin: 0;
+    text-align: center;
+    line-height: 42px;
+    color: #FFF;
+    font-weight: 500;
+  }
+
+  .inforTTNSQL {
+    background-color: #FFF;
+    padding: 5px 0px;
+    min-height: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  }
+
+  .inforTTNSQL div p {
+    margin: auto;
+    text-align: center;
+    
+  }
+
+  .inforTTNSQL div {
+    display: flex;
+    justify-content: center;
+  }

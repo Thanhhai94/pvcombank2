@@ -1,0 +1,49 @@
+<div id="themkhoanchi" class="themkhoanchi" style="display: none; position: relative; background:white; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.07);">
+    <div class="container" style="position: absolute; top: 200px; margin-left: calc(50% - 250px); background-color: white; width: 500px; box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;">
+        <div class="row" style="background-color: var(--color-bl);">
+            <p style="color: white;">Thêm khoản chi</p>
+        </div>
+        <form action="">
+            <div class="row">
+                <div class="col-3">
+                    <p>Ngày</p>
+                </div>
+                <div class="col-3">
+                    <input type="date">
+                </div>
+                <div class="col-2">
+                    <p>Số tiền</p>
+                </div>
+                <div class="col-4">
+                    <input type="number" step="100">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <p>Nội dung</p>
+                </div>
+                <div class="col-9">
+                    <input type="text">
+                </div>
+            </div>
+            <div class="submit_themkhoanchi" style="display: flex; justify-content: center;">
+                <input onclick="submitAddKhoanChi()" style="background: var(--color-bl);" value="Thêm"/>
+                <input onclick="closeAddKhoanChi()" style="background: green;" value="Hủy"/>
+            </div>
+        </form>
+    </div>
+</div>
+ 
+<script>
+    var x = document.getElementById('themkhoanchi')
+    function openAddKhoanChi(){
+        if (x.style.display === 'none') {
+            x.style.display = 'flex';
+        } else {
+            x.style.display = 'none';
+        }
+    }
+    function closeAddKhoanChi(){
+        x.style.display = 'none'
+    }
+</script>

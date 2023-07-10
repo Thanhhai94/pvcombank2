@@ -1,0 +1,88 @@
+.formLogin {
+  margin: auto;
+  margin-top: 20px;
+  align-items: center;
+  width: 450px;
+  background-color: white;
+  align-items: center;
+  border: none;
+  border-radius: 20px;
+  padding: 20px 40px;
+  color: #095182;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+.form h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  height: 3rem;
+}
+
+.form-control-pv {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.form-control-pv input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  border-bottom: 1px solid #ced4da;
+  width: 100%;
+  border-radius: 20px;
+  height: 42px;
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+.form-control-pv input:focus {
+  border-bottom: 3px solid #ffc708;
+}
+.form-button {
+  /* align-items: center; */
+  margin-top: 30px;
+  text-align: center;
+}
+
+.form-button button {
+  width: 40%;
+}
+.form-button button:hover {
+  background-color: #FFBB00;
+  font-weight: bold;
+  border: none;
+}
+
+.error {
+  color: red;
+}
+
+.success{
+  color: green;
+}
+.logo {
+ padding-top: 50px;
+}
+
+.login-page .logo .col-12 {
+  display: flex;
+  justify-content: center;
+}
+
+.login-page .title .col-12 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  color: var(--color-bl);
+}
+
+.field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+  top: 38px;
+}

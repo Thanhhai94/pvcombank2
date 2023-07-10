@@ -1,0 +1,58 @@
+<%- include('includes/head.ejs') %>
+<style>
+    body {
+        margin: 2em;
+    }
+    thead input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+    </style>
+<link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/navigation.css">
+<link rel="stylesheet" href="/css/thu_chi.css">
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    </head>
+    <body style="margin: auto;">
+        <%- include('includes/navigation.ejs') %>
+        
+        <div class="container-fluid" style="position: absolute; top: 70px;" >
+            <div class="row"  >
+                <div class="col-5">
+                    <%- include('includes/Thu_Chi/Chi.ejs') %>
+                    <div style="    margin-top: 10px;
+                    display: flex;
+                    justify-content: flex-end;">
+                        <button style="color: white;
+                        background: var(--color-bl);
+                        border-radius: 5px;
+                        border: none;
+                        padding: 2px 5px;" onclick="openAddKhoanChi()">Thêm khoản chi</button>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <%- include('includes/Thu_Chi/Thu.ejs') %>
+                    <div style="    margin-top: 10px;
+                    display: flex;
+                    justify-content: flex-end;">
+                        <button style="color: white;
+                        background: green;
+                        border-radius: 5px;
+                        border: none;
+                        padding: 2px 5px;" onclick="openAddKhoanThu()">Đóng quỹ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('includes/Thu_Chi/addChi.ejs') %>
+        <%- include('includes/Thu_Chi/addThu.ejs') %>
+        
+
+
+<%- include('includes/end.ejs') %>
+

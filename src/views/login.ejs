@@ -1,0 +1,116 @@
+<%- include('includes/head.ejs') %>
+<link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <div class="container-fluid login-page" style="background-image: linear-gradient(#FFFFFF, #ffc708); height: 100%; " >
+        <div class="row logo">
+            <div class="col-12">
+                <img src="/img/Logo_PVcombank.png" alt="" style="width: 200px;">
+            </div>
+        </div>
+        <div class="row title">
+            <div class="col-12">
+                <h4>Phòng kế hoạch và quản lý kết quả công việc - Khối Tài chính kế toán</h4>
+            </div>
+        </div>
+        <div class="formLogin">
+            <form action="/login" method="POST" class="form">
+                <h1 style="color: #0772ba;">Đăng nhập</h1>
+                <div class="form-control-pv">
+                    <div class="row">
+                        <input id="username" name="username" type="text"  placeholder="Tên đăng nhập">
+                        <small></small>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="form-control-pv">
+                    <div class="row">
+                        <input id="password" name="password" type="password" placeholder="Mật khẩu">
+                        <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                        <small></small>
+                        <span style="font-style: italic;
+                        font-size: 14px; margin: 5px auto 0px;" class="error"> <%= span %></span>
+                    </div>
+                </div>
+                <div class="form-button">
+                    <button type="submit" class="btn btn-secondary">ĐĂNG NHẬP</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $(".toggle-password").click(function() {
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+        input.attr("type", "text");
+        } else {
+        input.attr("type", "password");
+        }
+        });
+       
+    </script>
+
+<script>
+    let listAccount = <%- listAccount %>
+    let username = document.getElementById('username')
+    let form = document.querySelector('form')
+
+    function showError(input, message) {
+        let parent = input.parentElement;
+        let small = parent.querySelector('small');
+        small.classList.add('error');
+        small.innerText = message
+    }
+
+    function showSuccess(input, message) {
+        let parent = input.parentElement;
+        let small = parent.querySelector('small');
+        small.classList.remove('error');
+        small.innerText = message
+    }
+   
+    function checkAccount(input) {
+        let isAccount = false;
+        let KQ
+        for(let i = 0; i < listAccount.length; i++){
+            if(input.value == listAccount[i]){
+                KQ = true
+                break
+            } else {
+                KQ = false
+            }
+        }
+        if(KQ) {
+
+        }else {
+            showError(input,'Tài khoản không đúng')
+        }
+        return KQ
+        // for(let i = 0; i < listAccount.length; i++){
+        //     if(input.value != listAccount[i]) {
+        //         isOldPassword = true
+        //         showError(input,'Tài khoản chưa tổn tại')
+        //     } else {
+        //         isAccount = false
+        //         showSuccess(input,'')
+        //     }
+        // }
+        // return isOldPassword
+    }
+
+    form.addEventListener('submit', function(e){
+        e.preventDefault()
+        let isAccount = checkAccount(username)
+        if(!isAccount) {
+            //do nothing
+        } else {
+            form.submit()
+            return true
+
+        }
+    })
+</script>
+
+<%- include('includes/end.ejs') %>
