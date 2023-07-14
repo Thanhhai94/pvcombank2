@@ -1,0 +1,28 @@
+<div id="dong_ho" style="background-color: var(--color-bl); display: flex; justify-content: center;">
+    <div id="thoi_gian">
+        <div>
+            <span id="gio">00</span><span>Giờ</span>
+        </div>
+        <div>
+              <span id="phut">00</span><span>Phút</span>
+        </div>
+        <div>
+            <span id="giay">00</span><span>Giây</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    function Dong_ho() {
+        var gio = document.getElementById("gio");
+        var phut = document.getElementById("phut");
+        var giay = document.getElementById("giay");
+        var Gio_hien_tai = new Date().getHours();
+        var Phut_hien_tai = new Date().getMinutes();
+        var Giay_hien_tai = new Date().getSeconds();
+        gio.innerHTML = `${Gio_hien_tai}:`;
+        phut.innerHTML = `${Phut_hien_tai}:`;
+        giay.innerHTML = Giay_hien_tai;
+    }
+   var Dem_gio = setInterval(Dong_ho, 1000);
+</script>

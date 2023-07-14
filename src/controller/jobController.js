@@ -18,6 +18,7 @@ const getListJob = async (req, res) => {
     listjob: listjob,
     staff: staff,
     pageTitle: "Danh sach CV",
+    arrayListJob: JSON.stringify(listjob)
   });
 };
 
@@ -34,6 +35,7 @@ const getListJobSelectRptDate = async (req, res) => {
     listjob: listjob,
     staff: staff,
     pageTitle: "Danh sach CV",
+    arrayListJob: JSON.stringify(listjob)
   });
 };
 
@@ -53,9 +55,10 @@ const getDetailJob = async(req,res) => {
 }
 
 const updateDetailJob = async (req,res) => {
+  if(req.body.update == 'Cập nhật'){
   let date = new Date(), y = date.getFullYear(), m = date.getMonth();
-  let currentMonth = dayjs(new Date(y,m+1,0,7,0,0)).format("MM/YYYY")
   let data = req.body
+  let currentMonth = dayjs(data.Rptdate).format('MM/YYYY')
   let CIF = req.session.CIF;
   let Rptdate = req.params.Rptdate
   let staff = await staffServices.getStaffInfo(CIF);
@@ -68,7 +71,27 @@ const updateDetailJob = async (req,res) => {
     listjob: listjob,
     staff: staff,
     pageTitle: "Danh sach CV",
+    arrayListJob: JSON.stringify(listjob)
   });
+  } else {
+
+  let date = new Date(), y = date.getFullYear(), m = date.getMonth();
+  let data = req.body
+  let currentMonth = dayjs(data.Rptdate).format('MM/YYYY')
+  let CIF = req.session.CIF;
+  let Rptdate = req.params.Rptdate
+  let staff = await staffServices.getStaffInfo(CIF);
+  let listjob = await JobService.updateJob(data,CIF,Rptdate)
+  let insertData = await trackJobService.createTrackJob(CIF,data)
+  return res.render("DSCV", {
+    insertData:insertData,
+    Rptdate: Rptdate,
+    currentMonth:currentMonth,
+    listjob: listjob,
+    staff: staff,
+    pageTitle: "Danh sach CV",
+    arrayListJob: JSON.stringify(listjob)
+  })};
 }
 
 const getListQuanLy = async(req,res) => {
@@ -135,10 +158,7 @@ const getListJobQuanLySelectRptDate = async(req,res) => {
 
 const postGiaoviec = async(req,res) => {
   if(req.body.Upload == 'Upload') {
-    console.log('Upload')
   }
-
-
   if(req.body.update =='Cập nhật') {
     let data = req.body
     let listjob = await JobService.updateQLJob(data)

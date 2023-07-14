@@ -38,28 +38,28 @@
                           <% count = count +1 %>
                           <tr>
                               <th style="font-weight: 400; background: rgb(238, 237, 237); text-align: left; padding-left: 15px;"><%=i+1%>.<%=j+1%>.<%= count %> <%= groupKQTH[u].CHI_TIEU_REF %></th>
-                              <td ></td>
-                              <td  style="font-size: 12px;font-style: italic; "><%= groupKQTH[u].DVT %></td>
-                              <td >
+                              <td style="background-color: #FFFFFF;"></td>
+                              <td  style="font-size: 12px;font-style: italic; background-color: #FFFFFF;"><%= groupKQTH[u].DVT %></td>
+                              <td style="background-color: #FFFFFF;">
                                       <%= (groupKQTH[u].Amt == 0 || groupKQTH[u].Amt == null) ? '' :  (groupKQTH[u].DVT == 'tỷ đồng') ? Math.round(groupKQTH[u].Amt).toLocaleString("en-US") : (groupKQTH[u].DVT == '%') ? `${(groupKQTH[u].Amt*100).toFixed(2)} %` : (groupKQTH[u].DVT == 'triệu USD') ? Number((groupKQTH[u].Amt).toFixed(2)).toLocaleString("en-US"): (groupKQTH[u].DVT == 'khách hàng') ? Math.round(groupKQTH[u].Amt).toLocaleString("en-US"): (groupKQTH[u].DVT == 'thẻ') ? Math.round(groupKQTH[u].Amt).toLocaleString("en-US"): ''%>
                               </td>
-                              <td >
+                              <td style="background-color: #FFFFFF;">
                                       <%= (groupKQTH[u].KPI == 0 || groupKQTH[u].KPI == null) ? '' : (groupKQTH[u].DVT == 'tỷ đồng') ? Math.round(groupKQTH[u].KPI).toLocaleString("en-US") : (groupKQTH[u].DVT == '%') ? `${(groupKQTH[u].KPI*100).toFixed(2)} %` : (groupKQTH[u].DVT == 'triệu USD') ? Number((groupKQTH[u].KPI).toFixed(2)).toLocaleString("en-US"): (groupKQTH[u].DVT == 'khách hàng') ? Math.round(groupKQTH[u].KPI).toLocaleString("en-US"):(groupKQTH[u].DVT == 'thẻ') ? Math.round(groupKQTH[u].KPI).toLocaleString("en-US"):''%>
                               </td>
-                              <td >
+                              <td style="background-color: #FFFFFF;">
                                       <%=(groupKQTH[u].KPI == 0 || groupKQTH[u].KPI == null || groupKQTH[u].Amt == 0 || groupKQTH[u].Amt == null ) ? '' : `${(groupKQTH[u].Amt/groupKQTH[u].KPI*100).toFixed(2)} %`  %>
                               </td>
-                              <td >
+                              <td style="background-color: #FFFFFF;">
                                   <%= (groupKQTH[u].Amt_mtd == 0 || groupKQTH[u].Amt_mtd == null) ? '' :  (groupKQTH[u].DVT == 'tỷ đồng') ? Math.round(groupKQTH[u].Amt_mtd).toLocaleString("en-US") : (groupKQTH[u].DVT == '%') ? `${(groupKQTH[u].Amt_mtd*100).toFixed(2)} %` : (groupKQTH[u].DVT == 'triệu USD') ? Number((groupKQTH[u].Amt_mtd).toFixed(2)).toLocaleString("en-US"): (groupKQTH[u].DVT == 'khách hàng') ? Math.round(groupKQTH[u].Amt_mtd).toLocaleString("en-US"): (groupKQTH[u].DVT == 'thẻ') ? Math.round(groupKQTH[u].Amt_mtd).toLocaleString("en-US"): ''%>
                               </td>
-                              <td >
+                              <td style="background-color: #FFFFFF;">
                                   <%= (groupKQTH[u].KPI_mtd == 0 || groupKQTH[u].KPI_mtd == null) ? '' : (groupKQTH[u].DVT == 'tỷ đồng') ? Math.round(groupKQTH[u].KPI_mtd).toLocaleString("en-US") : (groupKQTH[u].DVT == '%') ? `${(groupKQTH[u].KPI_mtd*100).toFixed(2)} %` : (groupKQTH[u].DVT == 'triệu USD') ? Number((groupKQTH[u].KPI_mtd).toFixed(2)).toLocaleString("en-US"): (groupKQTH[u].DVT == 'khách hàng') ? Math.round(groupKQTH[u].KPI_mtd).toLocaleString("en-US"):(groupKQTH[u].DVT == 'thẻ') ? Math.round(groupKQTH[u].KPI_mtd).toLocaleString("en-US"):''%>
                               </td>
-                              <td >
+                              <td style="background-color: #FFFFFF;">
                                   <%=(groupKQTH[u].KPI_mtd == 0 || groupKQTH[u].KPI_mtd == null || groupKQTH[u].Amt_mtd == 0 || groupKQTH[u].Amt_mtd == null ) ? '' : `${(groupKQTH[u].Amt_mtd/groupKQTH[u].KPI_mtd*100).toFixed(2)} %`  %>
                               </td>
                               <% for(let l = 0; l < getmonths.length; l++) { %>
-                                  <td >
+                                  <td style="background-color: #FFFFFF;">
                                       <%for(let k=0; k < getAllKPI.length; k++) { %>
                                           <% if(getAllKPI[k].NHOM_CHI_TIEU == array_NHOM_CHI_TIEU[i] && getAllKPI[k].CODE_LOAI_CHI_TIEU == arrayFull[i][j] && getAllKPI[k].Rptdate == getmonths[l] && getAllKPI[k].CHI_TIEU == groupKQTH[u].CHI_TIEU){ %>
                                                   <%= (getAllKPI[k].Amt == 0 || getAllKPI[k].Amt == null) ? '' :   (groupKQTH[u].DVT == 'tỷ đồng') ? Math.round(getAllKPI[k].Amt).toLocaleString("en-US") : (groupKQTH[u].DVT == '%') ? `${(getAllKPI[k].Amt*100).toFixed(2)} %` : (groupKQTH[u].DVT == 'triệu USD') ? Number((getAllKPI[k].Amt).toFixed(2)).toLocaleString("en-US"): (groupKQTH[u].DVT == 'khách hàng') ? Math.round(getAllKPI[k].Amt).toLocaleString("en-US"):(groupKQTH[u].DVT == 'thẻ') ? Math.round(getAllKPI[k].Amt).toLocaleString("en-US"):''%>

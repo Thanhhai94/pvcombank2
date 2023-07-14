@@ -3,7 +3,7 @@
         <p><%= job.dateJob %></p>
     </div>
     <div class="col-lg-4 col-sm-4 ">
-        <p><%= job.titleJob %></p>
+        <p style="cursor: pointer;" class="handlerJobTitle" onclick="handlerShowBox(<%=job.id%>)"><%= job.titleJob %></p>
     </div>
     <div class="col-lg-2 col-sm-2 " style="display: flex; justify-content: space-around;">
         <p class="<%= (job.statusJob == 0) ? 'chuathuchien' : (job.statusJob) == 1 ? 'dangthuchien' : 'hoanthanh' %>">

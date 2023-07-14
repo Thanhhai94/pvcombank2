@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="http://files.codepedia.info/uploads/iScripts/html2canvas.js"></script>
+    
+</head>
+<body>
+    <div id="html-content-holder" style="background-color: #F0F0F1; color: #00cc65; width: 500px;padding-left: 25px; padding-top: 10px;">
+        <strong>Hello html2canvas</strong><hr/>
+        <h3 style="color: #3e4b51;">
+            Html to canvas, and canvas to proper image
+        </h3>
+        <p style="color: #3e4b51;">Hello html2canvas</p>
+    </div>
+    <input id="btn-Preview-Image" type="button" value="Preview"/>
+    <a id="btn-Convert-Html2Image" href="#">Download</a>
+    <br/>
+    <h3>Preview :</h3>
+    <div id="previewImage"></div>
+    <script>
+        $(document).ready(function(){
+        var element = $("#html-content-holder"); // global variable
+        var getCanvas; // global variable
+            $("#btn-Preview-Image").on('click', function () {
+                 html2canvas(element, {
+                 onrendered: function (canvas) {
+                        $("#previewImage").append(canvas);
+                        getCanvas = canvas;
+                     }
+                 });
+            });
+            $("#btn-Convert-Html2Image").on('click', function () {
+            var imgageData = getCanvas.toDataURL("image/png");
+            var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+            $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
+            });
+
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+ <!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Ví dụ sử dụng html2canvas</title>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+  <div id="myElement">
+    <h1>Hello, world!</h1>
+    <p>This is an example of using html2canvas.</p>
+  </div>
+
+  <button onclick="captureElement()">Chụp phần tử</button>
+
+  <script>
+    function captureElement() {
+      var element = document.getElementById('myElement');
+
+      html2canvas(element).then(function(canvas) {
+        // Khi hoàn thành, canvas sẽ chứa hình ảnh được tạo từ phần tử
+        // Bạn có thể làm gì đó với canvas ở đây, ví dụ như hiển thị nó hoặc lưu nó
+        document.body.appendChild(canvas);
+      });
+    }
+  </script>
+</body>
+</html> -->

@@ -12,6 +12,7 @@ import uploadController from '../controller/uploadController'
 import test from '../controller/test'
 import multer from "multer";
 import thuchiController from "../controller/thuchiController";
+import searchController from "../controller/searchController";
 const upload = multer({ dest: 'uploads/' });
 
 // const storage = multer.diskStorage({
@@ -58,6 +59,7 @@ const initWebRoutes = (app) => {
   router.post("/DScongviec/:Rptdate",jobController.updateDetailJob)
   
   router.get("/daily",reportDailyController.reportDailyTable)
+  // router.get("/daily/search",searchController.getMainSearch)
   router.get("/daily/:date",reportDailyController.reportDailyTableSelect)
   // router.get("/daily/dashboard/hdv",reportDailyDashboardController.reportDailyDashboardHDV)
   router.get("/daily/dashboard/hdv/:date/:select/",reportDailyDashboardControllerHDV.reportDailyDashboardHDVSelect)
@@ -66,6 +68,7 @@ const initWebRoutes = (app) => {
   router.get("/daily/dashboard/tindung/:date/:select/",reportDailyDashboardControllerTinDung.reportDailyDashboardTDSelect)
   // router.get("/daily/dashboard/tindung/tongkhoi/:date",reportDailyDashboardControllerTinDung.reportDailyDashboardTDSelect)
   
+
   router.get("/monthly", reportMonthly.reportMonthly)
   router.get("/monthly/tindung", QM_TD_BINHQUAN_Monthly_Controller.getAll_QM_TD_BINHQUAN)
   router.post("/monthly/tindung", QM_TD_BINHQUAN_Monthly_Controller.post_QM_TD_BINHQUAN)

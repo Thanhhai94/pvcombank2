@@ -6,7 +6,7 @@
     <tr>
         <th colspan="2" rowspan="2" style=" font-weight: bold; background-color: rgb(241, 222, 159);" rowspan="2">Khối</th>
         <th style=" font-weight: bold" colspan="3">Số tiền tất toán</th>
-        <th style=" font-weight: bold" colspan="3">Tỷ lệ tất toán trước hạn</th>
+        <th style=" font-weight: bold" colspan="3">Tỷ lệ tất toán</th>
     </tr>
     <tr>
         <th style="font-weight: 500;" style="font-weight: 500;"><%= date %></th>
@@ -30,7 +30,7 @@
         <td colspan="2" style="text-align: left;">Ngắn hạn</td>
         <td><%= (DU_NO_TAT_TOAN_TOANHANG_NH_TOANHANG.Amt=='') ? '' : Math.round(DU_NO_TAT_TOAN_TOANHANG_NH_TOANHANG.Amt).toLocaleString("en-US") %></td>
         <td><%= (DU_NO_TAT_TOAN_TOANHANG_NH_TOANHANG.Mtd == '') ? '' :Math.round(DU_NO_TAT_TOAN_TOANHANG_NH_TOANHANG.Mtd).toLocaleString("en-US") %></td>
-        <td><%= (DU_NO_TAT_TOAN_TOANHANG_NH_TOANHANG.Ytd == '') ? '' :Math.round(DU_NO_TAT_TOAN_TOANHANG_TOANHANG_TOANHANG.Ytd).toLocaleString("en-US") %></td>
+        <td><%= (DU_NO_TAT_TOAN_TOANHANG_NH_TOANHANG.Ytd == '') ? '' :Math.round(DU_NO_TAT_TOAN_TOANHANG_NH_TOANHANG.Ytd).toLocaleString("en-US") %></td>
         <td><%= (TY_LE_TAT_TOAN_TRUOC_HAN_TOANHANG_NH_TOANHANG.Amt == '') ? '' : `${(TY_LE_TAT_TOAN_TRUOC_HAN_TOANHANG_NH_TOANHANG.Amt*100).toFixed(2)} %` %></td>
         <td><%= (TY_LE_TAT_TOAN_TRUOC_HAN_TOANHANG_NH_TOANHANG.Mtd == '') ? '' : `${(TY_LE_TAT_TOAN_TRUOC_HAN_TOANHANG_NH_TOANHANG.Mtd*100).toFixed(2)} %` %></td>
         <td><%= (TY_LE_TAT_TOAN_TRUOC_HAN_TOANHANG_NH_TOANHANG.Ytd == '') ? '' : `${(TY_LE_TAT_TOAN_TRUOC_HAN_TOANHANG_NH_TOANHANG.Ytd*100).toFixed(2)} %` %></td>
@@ -84,7 +84,7 @@
         <td colspan="2" style="text-align: left;">Trung/dài hạn</td>
         <td><%= (DU_NO_TAT_TOAN_TOANHANG_TDH_TOANHANG.Amt=='') ? '' : Math.round(DU_NO_TAT_TOAN_TOANHANG_TDH_TOANHANG.Amt).toLocaleString("en-US") %></td>
         <td><%= (DU_NO_TAT_TOAN_TOANHANG_TDH_TOANHANG.Mtd == '') ? '' :Math.round(DU_NO_TAT_TOAN_TOANHANG_TDH_TOANHANG.Mtd).toLocaleString("en-US") %></td>
-        <td><%= (DU_NO_TAT_TOAN_TOANHANG_TDH_TOANHANG.Ytd == '') ? '' :Math.round(DU_NO_TAT_TOAN_TOANHANG_TOANHANG_TOANHANG.Ytd).toLocaleString("en-US") %></td>
+        <td><%= (DU_NO_TAT_TOAN_TOANHANG_TDH_TOANHANG.Ytd == '') ? '' :Math.round(DU_NO_TAT_TOAN_TOANHANG_TDH_TOANHANG.Ytd).toLocaleString("en-US") %></td>
         <td><%= (TY_LE_TAT_TOAN_TRUOC_HAN_TOANHANG_TDH_TOANHANG.Amt == '') ? '' : `${(TY_LE_TAT_TOAN_TRUOC_HAN_TOANHANG_TDH_TOANHANG.Amt*100).toFixed(2)} %` %></td>
         <td><%= (TY_LE_TAT_TOAN_TRUOC_HAN_TOANHANG_TDH_TOANHANG.Mtd == '') ? '' : `${(TY_LE_TAT_TOAN_TRUOC_HAN_TOANHANG_TDH_TOANHANG.Mtd*100).toFixed(2)} %` %></td>
         <td><%= (TY_LE_TAT_TOAN_TRUOC_HAN_TOANHANG_TDH_TOANHANG.Ytd == '') ? '' : `${(TY_LE_TAT_TOAN_TRUOC_HAN_TOANHANG_TDH_TOANHANG.Ytd*100).toFixed(2)} %` %></td>

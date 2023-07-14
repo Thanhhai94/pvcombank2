@@ -8,7 +8,7 @@
         <div class="col-12 <%= active_menu_left == 'BTH' ? 'active_menu_left' : '' %>">
            <a href="<%=`/daily/${date}`%>"><i class="fa-solid fa-table-list"></i> Bảng tổng hợp</a>
         </div>
-        <div <%= ruleReportDaily == 'ALL' ? '' : 'hidden' %> class="col-12 <%= active_menu_left == 'HDV' ? 'active_menu_left' : '' %>" id="menu_left_nav">
+        <div class="col-12 <%= active_menu_left == 'HDV' ? 'active_menu_left' : '' %>" id="menu_left_nav">
            <a href="<%=`/daily/dashboard/hdv/${date}/TOAN_HANG`%>"><i class="fa-solid fa-chart-simple"></i> Dashboard HĐV</a>
             <!-- <ul class="subnav_menu_left">
                 <ul class="subnav_menu_left">
@@ -19,8 +19,8 @@
                 </ul>
             </ul> -->
         </div>
-        <div <%= ruleReportDaily == 'ALL' ? '' : 'hidden' %> class="col-12 <%= active_menu_left == 'TIN_DUNG' ? 'active_menu_left' : '' %>" id="menu_left_nav">
-            <a href="<%=`/daily/dashboard/tindung/${date}/TOAN_HANG`%>"><i class="fa-solid fa-chart-simple"></i> Dashboard Tín Dụng</a>
+        <div class="col-12 <%= active_menu_left == 'TIN_DUNG' ? 'active_menu_left' : '' %>" id="menu_left_nav">
+            <a href="<%=`/daily/dashboard/tindung/${date}/TOAN_HANG`%>"><i class="fa-solid fa-chart-column"></i> Dashboard Tín Dụng</a>
             <!-- <ul class="subnav_menu_left">
                 <ul class="subnav_menu_left">
                 <li><a href="<%=`/daily/dashboard/tindung/${date}/KHCN`%>"><i class="fa-solid fa-user-group"></i> KH Cá nhân</a></li>
@@ -30,5 +30,6 @@
                 </ul>
             </ul> -->
          </div>
+         
 </div>
 

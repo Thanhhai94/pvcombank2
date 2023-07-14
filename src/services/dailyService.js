@@ -286,6 +286,24 @@ const getDataFromToDateTTGNTable = async(Rptdate,CHI_TIEU) => {
         console.log(error)
     }
 }
+const getDataFromToDateTTGNTable_ALM = async(Rptdate,CHI_TIEU) => {
+    try {
+        const KQ = await db.DAILYREPORT_TT_GN_ALM.findAll({
+            where: {
+                Rptdate: Rptdate,
+                CHI_TIEU: CHI_TIEU
+            },
+            order: [['Rptdate', 'ASC']]
+        })
+        if(KQ) {
+            return KQ
+        } else {
+            return []
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 const getDataFromToDateTTGN = async(Rptdate,KHOI_QL,KY_HAN,NHOM_KH,CHI_TIEU) => {
     try {
@@ -634,6 +652,47 @@ const getAllCustomerTD = async() => {
     }
 }
 
+
+const getCustomerProductDesc = async(Rptdate) => {
+    try {
+        const KQ = await db.Report_TD_Product_Daily.findAll({
+            where : {
+                Rptdate: Rptdate,
+            },
+            order: [['DIFF', 'DESC']]
+        })
+        if(KQ.length) {
+            return KQ
+        } else {
+            return [{
+            }]
+        }
+        
+    } catch (error) {
+       console.log(error) 
+    }
+}
+
+const getCustomerProductAsc = async(Rptdate) => {
+    try {
+        const KQ = await db.Report_TD_Product_Daily.findAll({
+            where : {
+                Rptdate: Rptdate,
+            },
+            order: [['DIFF', 'ASC']]
+        })
+        if(KQ.length) {
+            return KQ
+        } else {
+            return [{
+            }]
+        }
+        
+    } catch (error) {
+       console.log(error) 
+    }
+}
+
 module.exports = {
     getArrayDataHDVDaily:getArrayDataHDVDaily,
     getDataHDVDaily: getDataHDVDaily,
@@ -663,7 +722,10 @@ module.exports = {
     getCustomerHDVAsc:getCustomerHDVAsc,
     getLSHDDH:getLSHDDH,
     getLSDH:getLSDH,
-    getAllCustomerTD:getAllCustomerTD
+    getAllCustomerTD:getAllCustomerTD,
+    getDataFromToDateTTGNTable_ALM:getDataFromToDateTTGNTable_ALM,
+    getCustomerProductDesc:getCustomerProductDesc,
+    getCustomerProductAsc:getCustomerProductAsc
 }
 
 

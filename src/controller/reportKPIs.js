@@ -100,7 +100,6 @@ const getReportKPIsSelected = async(req,res) => {
     
     const getListKPI = await KPIsMonthlyServices.getListKPI(KHOI_QL,NHOM_KH,getSelectedMonth)
     const getListKPIMtd = await KPIsMonthlyServices.getListKPI_MTD(KHOI_QL,NHOM_KH,getSelectedMonth)
-    console.log(getListKPIMtd)
     const getAllKPI = await KPIsMonthlyServices.getAllListKPI(KHOI_QL,NHOM_KH,getmonths)
 
     return res.render('report_KPIs',{

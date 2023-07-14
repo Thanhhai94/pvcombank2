@@ -2,6 +2,7 @@ import staffServices from "../services/StaffService";
 import JobService from "../services/JobService"
 import handleListJob from "../utils/handleListJob";
 import dayjs from "dayjs";
+import getfromtodate from "../utils/getfromtodate";
 
 const getListStaff = async (req, res) => {
   let CIF = req.session.CIF
@@ -15,6 +16,8 @@ const getListStaff = async (req, res) => {
 };
 
 const getStaffInfo = async(req,res) => {
+  let yesterday = getfromtodate.getYesterday()
+  let dateUrl = dayjs(yesterday).format("YYYY-MM-DD")
   let date = new Date(), y = date.getFullYear(), m = date.getMonth();
   let Rptdate = dayjs(new Date(y,m,1)).format("YYYYMMDD")
   let CIF = req.session.CIF
@@ -22,6 +25,7 @@ const getStaffInfo = async(req,res) => {
   let listjob = await JobService.getListJob(CIF,Rptdate);
   if(staff) {
     return res.render("homepage",{
+      dateUrl: dateUrl,
       staff: staff,
       pageTitle: 'HomePage',
       listjob: listjob,

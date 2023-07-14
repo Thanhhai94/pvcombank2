@@ -45,12 +45,12 @@ const reportDailyTable = async (req,res) => {
     let data_LAI_SUAT_TIN_DUNG = await dailyServices.getArrayDataTDDaily(Rptdate,'LAI_SUAT_TIN_DUNG_ALM')
 
     //GIAI_NGAN
-    let data_DU_NO_GIAI_NGAN = await dailyServices.getDataFromToDateTTGNTable(Rptdate,'DU_NO_GIAI_NGAN')
-    let data_TY_LE_GIAI_NGAN_UU_DAI = await dailyServices.getDataFromToDateTTGNTable(Rptdate,'TY_LE_GIAI_NGAN_UU_DAI')
+    let data_DU_NO_GIAI_NGAN = await dailyServices.getDataFromToDateTTGNTable_ALM(Rptdate,'DU_NO_GIAI_NGAN')
+    let data_TY_LE_GIAI_NGAN_UU_DAI = await dailyServices.getDataFromToDateTTGNTable_ALM(Rptdate,'TY_LE_GIAI_NGAN_UU_DAI')
 
     //TAT_TOAN
-    let data_DU_NO_TAT_TOAN = await dailyServices.getDataFromToDateTTGNTable(Rptdate,'DU_NO_TAT_TOAN')
-    let data_TY_LE_TAT_TOAN_TRUOC_HAN = await dailyServices.getDataFromToDateTTGNTable(Rptdate,'TY_LE_TAT_TOAN_TRUOC_HAN')
+    let data_DU_NO_TAT_TOAN = await dailyServices.getDataFromToDateTTGNTable_ALM(Rptdate,'DU_NO_TAT_TOAN')
+    let data_TY_LE_TAT_TOAN_TRUOC_HAN = await dailyServices.getDataFromToDateTTGNTable_ALM(Rptdate,'TY_LE_TAT_TOAN_TRUOC_HAN')
     
     //Customer_TD
     let TOP_CANHAN_TANG = await dailyServices.getCustomerTDDailyCNTang(Rptdate)
@@ -61,6 +61,11 @@ const reportDailyTable = async (req,res) => {
     //Customer_HDV
     let KH_HDV_DESC = await dailyServices.getCustomerHDVDesc(Rptdate)
     let KH_HDV_ASC = await dailyServices.getCustomerHDVAsc(Rptdate)
+
+    //Cam co trai phieu
+    let KH_PRODUCT_DESC = await dailyServices.getCustomerProductDesc(Rptdate)
+    let KH_PRODUCT_ASC = await dailyServices.getCustomerProductAsc(Rptdate)
+
     
     //PS_MOI
     let data_HDV_PS_MOI_DAILY = await dailyServices.getDataFromHDVPSMOIDAILY(Rptdate)
@@ -93,6 +98,9 @@ const reportDailyTable = async (req,res) => {
         date: date,
         selectedDate: JSON.stringify(date),
         dateFormat: dateFormat,
+
+        
+
 
         //LSHD_DH
         LSDH_KHCN : handleLSHDDH.handlerResult(data_LSHD_DH,'KHCN',Rptdate),
@@ -234,6 +242,10 @@ const reportDailyTable = async (req,res) => {
         TOP_KKH_KHCN_DESC : getCustomer.getListCustomerIncrease(KH_HDV_DESC,'KKH','CN'),
         TOP_KKH_KHDN_ASC : getCustomer.getListCustomerDecrease(KH_HDV_ASC,'KKH','DN'),
         TOP_KKH_KHDN_DESC : getCustomer.getListCustomerIncrease(KH_HDV_DESC,'KKH','DN'),
+
+        //Cam co trai phieu
+        TOP_KH_PRODUCT_DESC : KH_PRODUCT_DESC,
+        TOP_KH_PRODUCT_ASC : KH_PRODUCT_ASC,
 
         //GIAI NGAN
         DU_NO_GIAI_NGAN_TOANHANG_TOANHANG_TOANHANG : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'TOAN_HANG','TOAN_HANG','TOAN_HANG'),
@@ -382,12 +394,12 @@ const reportDailyTableSelect = async (req,res) => {
     let data_LAI_SUAT_TIN_DUNG = await dailyServices.getArrayDataTDDaily(Rptdate,'LAI_SUAT_TIN_DUNG_ALM')
 
     //GIAI_NGAN
-    let data_DU_NO_GIAI_NGAN = await dailyServices.getDataFromToDateTTGNTable(Rptdate,'DU_NO_GIAI_NGAN')
-    let data_TY_LE_GIAI_NGAN_UU_DAI = await dailyServices.getDataFromToDateTTGNTable(Rptdate,'TY_LE_GIAI_NGAN_UU_DAI')
+    let data_DU_NO_GIAI_NGAN = await dailyServices.getDataFromToDateTTGNTable_ALM(Rptdate,'DU_NO_GIAI_NGAN')
+    let data_TY_LE_GIAI_NGAN_UU_DAI = await dailyServices.getDataFromToDateTTGNTable_ALM(Rptdate,'TY_LE_GIAI_NGAN_UU_DAI')
 
     //TAT_TOAN
-    let data_DU_NO_TAT_TOAN = await dailyServices.getDataFromToDateTTGNTable(Rptdate,'DU_NO_TAT_TOAN')
-    let data_TY_LE_TAT_TOAN_TRUOC_HAN = await dailyServices.getDataFromToDateTTGNTable(Rptdate,'TY_LE_TAT_TOAN_TRUOC_HAN')
+    let data_DU_NO_TAT_TOAN = await dailyServices.getDataFromToDateTTGNTable_ALM(Rptdate,'DU_NO_TAT_TOAN')
+    let data_TY_LE_TAT_TOAN_TRUOC_HAN = await dailyServices.getDataFromToDateTTGNTable_ALM(Rptdate,'TY_LE_TAT_TOAN_TRUOC_HAN')
     
     //Customer_TD
     let TOP_CANHAN_TANG = await dailyServices.getCustomerTDDailyCNTang(Rptdate)
@@ -399,6 +411,10 @@ const reportDailyTableSelect = async (req,res) => {
     let KH_HDV_DESC = await dailyServices.getCustomerHDVDesc(Rptdate)
     let KH_HDV_ASC = await dailyServices.getCustomerHDVAsc(Rptdate)
     
+    //Cam co trai phieu
+    let KH_PRODUCT_DESC = await dailyServices.getCustomerProductDesc(Rptdate)
+    let KH_PRODUCT_ASC = await dailyServices.getCustomerProductAsc(Rptdate)
+
     //PS_MOI
     let data_HDV_PS_MOI_DAILY = await dailyServices.getDataFromHDVPSMOIDAILY(Rptdate)
     let HDV_PS_MOI_DAILY_KHDN_6M = await dailyServices.getDataFromHDVPSMOIDAILYSPECIAL(Rptdate,'KHDN','1. <6M')
@@ -571,6 +587,10 @@ const reportDailyTableSelect = async (req,res) => {
         TOP_KKH_KHCN_DESC : getCustomer.getListCustomerIncrease(KH_HDV_DESC,'KKH','CN'),
         TOP_KKH_KHDN_ASC : getCustomer.getListCustomerDecrease(KH_HDV_ASC,'KKH','DN'),
         TOP_KKH_KHDN_DESC : getCustomer.getListCustomerIncrease(KH_HDV_DESC,'KKH','DN'),
+
+        //Cam co trai phieu
+        TOP_KH_PRODUCT_DESC : KH_PRODUCT_DESC,
+        TOP_KH_PRODUCT_ASC : KH_PRODUCT_ASC,
 
         //GIAI NGAN
         DU_NO_GIAI_NGAN_TOANHANG_TOANHANG_TOANHANG : tableFunc.getRowDataTDDaily(data_DU_NO_GIAI_NGAN,'TOAN_HANG','TOAN_HANG','TOAN_HANG'),

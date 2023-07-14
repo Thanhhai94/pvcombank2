@@ -25,7 +25,7 @@
                   </ul>
               </div>
               <div class="col-lg-3" id="nav">
-                  <a href="/DScongviec">
+                  <a href="">
                     Công việc
                     <i class="fa-solid fa-caret-down"></i>
                     <ul class="subnav">
@@ -52,7 +52,7 @@
           </div>
         </div>
               <div class="col-lg-2" id="nav">
-                <a href="/">Cá nhân</a>
+                <a href="/"><%= staff.Name %></a>
                 <i class="fa-solid fa-user" style="color: #0a0e7b;"></i>
                 <ul class="subnav">
                   <li style="text-align: left; padding-left: 46px;"><a href="/">Tài khoản</a></li>
@@ -64,3 +64,17 @@
       </div>
     </div>
 </header>
+    <div style="position: fixed; left: 94vw; top: 92vh; z-index: 5000;">
+      <!-- <div>
+        <button onclick="captureElement()">Chụp phần tử</button>
+      </div> -->
+      <div class="onClickBack" onclick="back()">
+        <i class="fa-solid fa-circle-left" style="color: #ffc708; font-size: 40px;"></i>
+      </div>
+    </div>
+    
+    <script>
+      function back(){
+          history.back();
+      }
+  </script>

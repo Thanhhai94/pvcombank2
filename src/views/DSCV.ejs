@@ -7,7 +7,12 @@
 <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
 <script>dayjs().format()</script>
 </head>
-<body>
+<body style="
+    background-image: url('/img/homepage.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+"> 
     <%- include('includes/navigation.ejs') %>
     <div class="container homepage">
         <div class="row">
@@ -18,7 +23,13 @@
         <% for(let job of listjob) { %>
             <%- include('includes/Thuc_hien_CV/DSCV_ND.ejs',{job:job}) %>
         <% } %>
+
+
     </div>
+    
+        <%- include('includes/Thuc_hien_CV/FormDSCV_ND.ejs') %>
+   
+
 
     <script>
         var makeDate = function(date){

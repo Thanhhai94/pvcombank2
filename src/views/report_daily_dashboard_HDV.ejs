@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="/css/Chart_Daily/dashboard/HDV/daily_dashboard_HDV_chart_2.css">
 <link rel="stylesheet" href="/css/Chart_Daily/dashboard/HDV/TKTT.css">
 
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/pareto.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -16,17 +18,17 @@
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
 </head>
-<body>
+<body id="myElement">
     <%- include('includes/navigation.ejs') %>
     <div class="container-fluid homepage" style="background-color: #DDDDDD;">
-        <div class="row" style="margin-bottom: 50px;">
+        <div  class="row" style="margin-bottom: 50px;">
             <div class="col-lg-2" style="padding: 0; position: fixed; width: 100%; top: 46px;">
                 <%- include('includes/Daily/menu_left_daily') %>
             </div>
-            <div class="col-lg-10" style="padding-left: 0; padding-right: 10px; left: 215px; position: relative;">
+            <div  class="col-lg-10" style="padding-left: 0; padding-right: 10px; left: 215px; position: relative;">
                 <%- include('includes/Daily/dashboard/HDV/daily_dashboard_HDV_title')%>
                 <%- include('includes/Daily/dashboard/HDV/daily_dashboard_HDV_select') %>
-                <div style="position: relative; top: 80px;">
+                <div <%= ruleReportDaily == 'ALL' ? '' : 'hidden' %>  style="position: relative; top: 80px;">
                 <%- include('includes/Daily/dashboard/HDV/daily_dashboard_HDV_1') %>
                 
                 <div style="border: 3px solid #0772ba; margin-top: 20px; border-radius: 50px; z-index: 10000;">
@@ -140,6 +142,19 @@
     <script src="/Chart_script/Daily/HDV/daily_dashboard_HDV_chart_6.js"></script>
     <script src="/Chart_script/Daily/HDV/daily_dashboard_HDV_chart_7.js"></script>
     <script src="/Chart_script/Daily/HDV/daily_dashboard_HDV_chart_8.js"></script>
+
+    <script>
+        function captureElement() {
+      var element = document.getElementById('myElement');
+
+      html2canvas(element).then(function(canvas) {
+        // Khi hoàn thành, canvas sẽ chứa hình ảnh được tạo từ phần tử
+        // Bạn có thể làm gì đó với canvas ở đây, ví dụ như hiển thị nó hoặc lưu nó
+        document.body.appendChild(canvas);
+      });
+    }
+    </script>
+
 
 <%- include('includes/end.ejs') %>
 

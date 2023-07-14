@@ -15,18 +15,22 @@
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
+
+<!-- screen -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://files.codepedia.info/uploads/iScripts/html2canvas.js"></script>
 </head>
 <body>
     <%- include('includes/navigation.ejs') %>
     <div class="container-fluid homepage" style="background-color: #a8a8a8;">
-        <div class="row" style="margin-bottom: 50px;">
+        <div id="html-content-holder" class="row" style="margin-bottom: 50px;">
             <div class="col-lg-2" style="padding: 0; position: fixed; width: 100%; top: 46px;">
                 <%- include('includes/Daily/menu_left_daily') %>
             </div>
             <div class="col-lg-10" style="padding-left: 0; padding-right: 10px; left: 215px; position: relative;">
                 <%- include('includes/Daily/dashboard/TD/daily_dashboard_TD_title')%>
                 <%- include('includes/Daily/dashboard/TD/daily_dashboard_TD_select') %>
-                <div style="position: relative; top: 80px;">
+                <div <%= ruleReportDaily == 'ALL' ? '' : 'hidden' %>  style="position: relative; top: 80px;">
                     <%- include('includes/Daily/dashboard/TD/daily_dashboard_TD_1')%>
                     <div style="margin-top: 30px;">
                         <div class="row">
@@ -108,6 +112,8 @@
                 </div>
             </div>
         </div>
+
+        
     </div>
     <script src="/Chart_script/Daily/TD/daily_dashboard_TD_chart_1.js"></script>
     <script src="/Chart_script/Daily/TD/daily_dashboard_TD_chart_2.js"></script>
@@ -116,6 +122,9 @@
     <script src="/Chart_script/Daily/TD/daily_dashboard_TD_chart_5.js"></script>
     <script src="/Chart_script/Daily/TD/daily_dashboard_TD_chart_6.js"></script>
     <script src="/Chart_script/Daily/TD/daily_dashboard_TD_chart_7.js"></script>
+
+
+    
 
 <%- include('includes/end.ejs') %>
 

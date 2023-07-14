@@ -29,3 +29,91 @@
     padding: 3px;
     color: #FFFFFF;
 }
+
+
+.SelectReport .select:hover {
+    background: rgb(242, 241, 241);
+    cursor: pointer;
+}
+
+.SelectReport .select {
+    width: 100%; 
+    height: 150px; 
+    background-color: white; 
+    box-shadow: 0 2px 4px 0 rgba(104, 115, 122, .1)
+}
+
+.SelectReport .select a {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.SelectReport .select ul li a {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.SelectReport .select ul li{
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+
+.SelectReport .select ul {
+    list-style: none;
+}
+.SelectReport .select a:hover {
+    text-decoration:underline;
+}
+
+#calendar .air-datepicker {
+    width: 100%;
+}
+
+.onClickBack:hover{
+    cursor: pointer;
+}
+
+/* clock */
+#dong_ho h2{
+    position: relative;
+    display:block;
+    color:#fff;
+    text-align: center;
+    margin:2px 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* letter-spacing: 0.4em; */
+}
+#dong_ho #thoi_gian{
+    display:flex;
+}
+#dong_ho #thoi_gian div{
+    position: relative;
+    margin: 0 0px;
+}
+
+#dong_ho #thoi_gian div span{
+    padding: 2px;
+    position: relative;
+    display:block;
+    width:100%;
+    height: 70px;
+    color: #fff;
+    font-weight: 300;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    z-index:3;
+}
+
+#dong_ho #thoi_gian span:nth-child(2){
+    height: 30px;
+    font-size: 1rem;
+    letter-spacing: 0.3rem;
+    z-index: 2;
+    box-shadow: none;
+   
+    text-transform: uppercase;
+}

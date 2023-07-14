@@ -3,6 +3,7 @@ import staffServices from "../services/StaffService";
 import JobService from "../services/JobService"
 import dayjs from "dayjs";
 import handleListJob from "../utils/handleListJob";
+import getfromtodate from "../utils/getfromtodate";
 
 const getLogin = async (req,res) => {
   let allUser = await UserServices.getAllUser()
@@ -19,6 +20,8 @@ const getLogin = async (req,res) => {
 }
 
 const loginPost = async (req, res) => {
+  let yesterday = getfromtodate.getYesterday()
+  let dateUrl = dayjs(yesterday).format("YYYY-MM-DD")
   let userName = req.body.username
   let password = req.body.password
   let user = await UserServices.getUser(userName);
@@ -31,6 +34,7 @@ const loginPost = async (req, res) => {
     let staff = await staffServices.getStaffInfo(CIF);
     let listjob = await JobService.getListJob(CIF,Rptdate);
     return res.render('homepage', {
+      dateUrl: dateUrl,
       staff: staff,
       pageTitle: 'HomePage',
       listjob: listjob,

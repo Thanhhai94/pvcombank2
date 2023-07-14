@@ -27,3 +27,25 @@
     color: var(--color-bl);
     font-weight: 500;
 }
+
+#myDiv3 form .row #title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#myDiv3 form .row textarea {
+    min-height: 100px;
+    margin: 0 5px 10px 5px;
+}
+
+#myDiv3 form p{
+    margin-bottom: 0;
+}
+
+#myDiv3 form .row input,select {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+

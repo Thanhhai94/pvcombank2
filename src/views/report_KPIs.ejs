@@ -8,7 +8,11 @@
 <!-- use version 0.20.0 -->
 <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 </head>
-<body>
+<body style="background-image: url('/img/homepage.png');
+background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+">
     <%- include('includes/navigation.ejs') %>
     <div <%= ruleReportDaily == 'ALL' ? '' : 'hidden' %> >
         <%- include('includes/KPIs/title.ejs') %>
