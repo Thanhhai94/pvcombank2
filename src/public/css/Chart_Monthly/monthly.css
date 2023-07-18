@@ -1,0 +1,294 @@
+/* #navigationMonthly {
+    position: fixed; 
+    top: 46px; 
+    border-bottom: 1px solid gray;
+    z-index: 99;
+}
+
+#navigationMonthly .row .col-5,.col-6 {
+    text-align: center;
+    line-height: 42px;
+    height: 42px;
+}
+
+#navigationMonthly .row .col-5>p{
+   font-size: 20px;
+   margin-bottom: 0;
+   font-weight: 600;
+}
+#navigationMonthly .row .col-6 .col-3 p{
+    margin-bottom: 0;
+    color: white;
+ }
+ #navigationMonthly .row .col-6 .col-3 {
+    padding: 0px 3px;
+    cursor: pointer;
+}
+
+#navigationMonthly .row .col-6 .col-3>div {
+    background-color: rgb(2, 48, 71);
+}
+
+#navigationMonthly .row .col-6 .col-3 div .subnavMonthly{
+    list-style: none;
+    display: none;
+}
+
+#navigationMonthly .row .col-6 .col-3 div ul li{
+    border-top: 1px solid white;
+    height: 42px;
+}
+
+#navigationMonthly .row .col-6 .col-3 div ul li a{
+    columns: #FFFFFF;
+}
+
+
+#navigationMonthly .row .col-6 .col-3>div:hover .subnavMonthly{
+    display: block;
+    z-index: 1000;
+}   
+
+#navigationMonthly .row .col-6 .col-3>div:hover {
+    font-weight: 500;
+}
+
+#navigationMonthly .row .col-6 .col-3>div:hover li {
+    font-weight: 300;
+}
+
+#navigationMonthly .row .col-6 .col-3 div ul li:hover{
+    background-color: rgb(255, 183, 3);
+}
+
+#navigationMonthly .row .col-6 .col-3 div ul li>a {
+    color: white;
+}
+
+#navigationMonthly .row .col-6 .col-3 div ul li:hover a{
+    color: rgb(2, 48, 71);;
+    font-weight: 400;
+}
+
+#quymobinhquan  p {
+    margin-bottom: 0;
+    color: white;
+}
+
+#quymobinhquan .title {
+    background-color: rgb(255, 183, 3);
+    height: 42px;
+    text-align: center;
+}
+
+#quymobinhquan .title p {
+    color: black;
+    line-height: 42px;
+    font-weight: 500;
+}
+
+#quymobinhquan .row .col-4 p {
+    background: rgb(251, 133, 0);
+    margin-top: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+#quymobinhquan .row {
+    margin: 0;
+}
+
+#quymobinhquan .row .col-12{
+    padding: 0;
+}
+
+#quymobinhquan .totalQuymo {
+    border-bottom: 1px solid white;
+}
+
+#quymobinhquan .totalQuymo p {
+    font-size: 32px;
+    text-align: center;
+}
+
+#quymobinhquan .col-12 .col-6 p{
+    text-align: left;
+}
+
+#quymobinhquan .col-12 .col-6 .value {
+    text-align: center;
+}
+
+.navMonthly ul {
+    position: relative;
+}
+.navMonthly ul li:hover > ul {
+	display:inherit;
+}
+
+.navMonthly ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative; */
+/* } */
+
+/* Second, Third and more Tiers	
+.navMonthly ul ul ul li {
+	position: relative;
+	top:-60px; 
+	left:170px;
+} */
+
+
+/* CSS Document */
+
+
+#navigationMonthly {
+    height: 42px;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 46px;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    z-index: 49;
+    border-bottom: 1px solid var(--color-bl);
+}
+
+#navigationMonthly p{
+    margin: 0;
+}
+
+#navigationMonthly .row .col-5>p{
+   font-size: 20px;
+   margin-bottom: 0;
+   font-weight: 600;
+}
+p {
+	text-align: center;
+}
+
+/* nav {
+	margin: 50px 0;
+	background-color: #E64A19;
+} */
+
+nav ul {
+	padding: 0;
+    margin: 0;
+	list-style: none;
+	position: relative;
+    border-bottom: 1px solid #FFF;
+	}
+	
+nav ul li {
+	display:inline-block;
+	background-color: rgb(2, 48, 71);
+    min-width: 170px;
+    border-bottom: 0.2px solid #FFF;
+	}
+
+nav a {
+	display:block;
+	padding:0 10px;	
+	color:#FFF;
+	line-height: 42px;
+	text-decoration:none;
+    text-align: center;
+}
+
+nav a:hover { 
+	background-color: var(--color-background);
+    font-weight: 500; 
+}
+
+/* Hide Dropdowns by Default */
+nav ul ul {
+	display: none;
+	position: absolute; 
+	top: 42px; /* the height of the main nav */
+}
+	
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+	display:inherit;
+}
+	
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+    left: 0;
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+/* Second, Third and more Tiers	*/
+nav ul ul ul li {
+	position: relative;
+	top:-46px; 
+	left:170px;
+}
+
+	
+/* Change this in order to change the Dropdown symbol */
+/* quy mo binh quan */
+
+#quymobinhquan  p {
+    margin-bottom: 0;
+    color: white;
+}
+
+#quymobinhquan .title {
+    background-color: rgb(255, 183, 3);
+    height: 42px;
+    text-align: center;
+}
+
+#quymobinhquan .title p {
+    color: black;
+    line-height: 42px;
+    font-weight: 500;
+}
+
+#quymobinhquan input {
+    background-color: rgb(251, 133, 0);
+    padding: 2px 10px;
+    width: 100%;
+}
+
+#quymobinhquan .row .col-4 p {
+    background: rgb(251, 133, 0);
+    margin-top: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+#quymobinhquan .row {
+    margin: 0;
+    min-height: 32px;
+}
+
+#quymobinhquan .row .col-12{
+    padding: 0;
+}
+
+#quymobinhquan .totalQuymo {
+    border-bottom: 1px solid white;
+}
+
+#quymobinhquan .totalQuymo p {
+    font-size: 32px;
+    text-align: center;
+}
+
+#quymobinhquan .col-12 .col-6 p{
+    text-align: left;
+}
+
+#quymobinhquan .col-12 .col-6 .value {
+    text-align: center;
+}

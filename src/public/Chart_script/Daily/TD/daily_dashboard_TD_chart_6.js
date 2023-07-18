@@ -84,7 +84,8 @@ Highcharts.chart('daily_dashboard_TD_chart_6', {
         format: '{point.y:,.0f}'
       }
   
-    }, {
+    },
+    {
       name: 'Tỉ lệ tất toán trước hạn',
       type: 'spline',
       color: 'rgb(153,0,255)',

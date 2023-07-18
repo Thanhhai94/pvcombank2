@@ -122,10 +122,10 @@ Highcharts.chart('chart_2', {
         borderRadius:5,
         enabled:true ,
         format: '{point.y:.2f}%',
-      backgroundColor: 'RGB(237,125,49)',
-      padding: 6 
+        backgroundColor: 'RGB(255,192,0)',
+        padding: 6 
         },
-        color: 'RGB(237,125,49)',
+        color: 'RGB(0,0,0)',
         name: 'KHDNL',
         type: 'spline',
         data: data_LS_CV_BQ_TT_KHDNL,

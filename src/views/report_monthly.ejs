@@ -6,21 +6,20 @@
 <link rel="stylesheet" href="/css/Chart_Monthly/QM_TD_BQ.css">
 <link rel="stylesheet" href="/css/Chart_Monthly/menu_left.css">
 <link rel="stylesheet" href="/css/select_time.css">
+<link rel="stylesheet" href="/css/Chart_Monthly/monthly.css">
+
 <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/pareto.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
 
 </head>
 <body>
     <%- include('includes/navigation.ejs') %>
-    <div class="container-fluid homepage">
-        <div class="row">
-        <div class="col-lg-2" style="padding: 0;"><%- include('includes/Monthly/menu_left.ejs') %></div>
-        <div class="col-lg-10">
-        </div>
-    </div>
-    </div>
+    <%- include('includes/Monthly/navigationMonthly.ejs') %>
+    <%- include('includes/Monthly/HDV/HDV.ejs') %>
 <%- include('includes/end.ejs') %>
 
 
