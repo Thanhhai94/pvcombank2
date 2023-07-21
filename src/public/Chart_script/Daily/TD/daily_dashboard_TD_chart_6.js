@@ -1,5 +1,22 @@
 Highcharts.chart('daily_dashboard_TD_chart_6', {
     chart: {
+      events: {
+        render: function() {
+            var chart = this;
+            chart.series.map(value => {
+                if(value.name !== 'Tỉ lệ tất toán trước hạn'){
+                    value.points.forEach(function(p) {
+                        if (p.dataLabel) {
+                          p.dataLabel.attr({
+                            y: chart.plotHeight - p.dataLabel.height
+                          });
+                        }
+                      })
+                }
+            });
+          }
+    
+      },
     marginLeft: 30,
     height: 320,
     zoomType: 'xy',
@@ -63,7 +80,7 @@ Highcharts.chart('daily_dashboard_TD_chart_6', {
     legend: {
         align: 'center',
         verticalAlign: 'bottom',
-        
+        symbolRadius: 0
     },
     series: [{
       name: 'Dư nợ tất toán',
@@ -95,6 +112,7 @@ Highcharts.chart('daily_dashboard_TD_chart_6', {
         valueSuffix: ' %'
       },
       dataLabels: {
+        allowOverlap:true,
         style : {
             color: 'rgb(153,0,255)',
             fontSize : 10,
@@ -103,7 +121,7 @@ Highcharts.chart('daily_dashboard_TD_chart_6', {
             textOutline: 0,
     
         },
-        y: -10,
+        y: -5,
         enabled: true,
         format: '{point.y:,.1f}%'
       }

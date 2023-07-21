@@ -2,7 +2,6 @@ import express from "express";
 import staffController from "../controller/staffController";
 import userController from "../controller/userController";
 import jobController from "../controller/jobController";
-import QM_TD_BINHQUAN_Monthly_Controller from '../controller/QM_TD_BINHQUAN_Monthly_Controller'
 import reportMonthly from '../controller/reportMonthly'
 import reportDailyController from '../controller/reportDailyController'
 import reportDailyDashboardControllerHDV from '../controller/reportDailyDashboardControllerHDV'
@@ -12,7 +11,6 @@ import uploadController from '../controller/uploadController'
 import test from '../controller/test'
 import multer from "multer";
 import thuchiController from "../controller/thuchiController";
-import searchController from "../controller/searchController";
 const upload = multer({ dest: 'uploads/' });
 
 // const storage = multer.diskStorage({
@@ -68,10 +66,7 @@ const initWebRoutes = (app) => {
   router.get("/daily/dashboard/tindung/:date/:select/",reportDailyDashboardControllerTinDung.reportDailyDashboardTDSelect)
   // router.get("/daily/dashboard/tindung/tongkhoi/:date",reportDailyDashboardControllerTinDung.reportDailyDashboardTDSelect)
   
-
-  router.get("/monthly", reportMonthly.reportMonthly)
-  router.get("/monthly/tindung", QM_TD_BINHQUAN_Monthly_Controller.getAll_QM_TD_BINHQUAN)
-  router.post("/monthly/tindung", QM_TD_BINHQUAN_Monthly_Controller.post_QM_TD_BINHQUAN)
+  router.get("/monthly",reportMonthly.getMonthlyDashboard)
 
   router.get("/KPIs/:KHOI_QL",reportKPIs.getReportKPIs)
   router.get("/KPIs/:KHOI_QL/:NHOM_KH",reportKPIs.getReportKPIs)

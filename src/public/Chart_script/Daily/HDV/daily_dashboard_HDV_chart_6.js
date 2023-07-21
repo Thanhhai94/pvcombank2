@@ -54,7 +54,8 @@ Highcharts.chart('TT_Casa', {
     verticalAlign: 'top',
     layout: 'vertical',
     x: 0,
-    y: 80
+    y: 80,
+    symbolRadius: 0
 },
   yAxis: {
     labels: {

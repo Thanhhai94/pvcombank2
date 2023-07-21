@@ -1,5 +1,41 @@
+var borderColor = 'black';
+var borderWidth = 1;
+
+function setBorders(legendItems) {
+  legendItems.forEach(function (item) {
+    if (item.legendItem && ! item.legendItem.line) {
+      item.legendItem.symbol.element.setAttribute('stroke-width', borderWidth);
+      item.legendItem.symbol.element.setAttribute('stroke', borderColor);
+    }
+  });
+}
+
 Highcharts.chart('daily_dashboard_TD_chart_7', {
   chart: {
+    events: {
+      render: function() {
+          var chart = this;
+          chart.series.map(value => {
+              if(value.name !== 'Tỉ lệ giải ngân ưu đãi'){
+                  value.points.forEach(function(p) {
+                      if (p.dataLabel) {
+                        p.dataLabel.attr({
+                          y: chart.plotHeight - p.dataLabel.height
+                        });
+                      }
+                    })
+              }
+          });
+        },
+        load: function () {
+          if (this.options.chart.type === 'map') {
+            setBorders(this.legend.allItems)
+          } else {
+            setBorders(this.series)
+          }
+        }
+  
+    },
   marginLeft: 30,
   height: 320,
   zoomType: 'xy',
@@ -65,7 +101,7 @@ Highcharts.chart('daily_dashboard_TD_chart_7', {
   legend: {
       align: 'center',
       verticalAlign: 'bottom',
-      
+      symbolRadius: 0
   },
   series: [{
     name: 'Dư nợ giải ngân',
@@ -98,7 +134,7 @@ Highcharts.chart('daily_dashboard_TD_chart_7', {
       valueSuffix: ' %'
     },
     dataLabels: {
-      
+      allowOverlap:true,
       style : {
           color: '#EE8980',
           fontSize : 10,

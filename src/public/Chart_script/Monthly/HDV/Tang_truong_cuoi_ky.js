@@ -58,7 +58,7 @@ Highcharts.chart('tang_truong_cuoi_ky', {
         }
       },
     xAxis: [{
-      categories: ['202301','202302','202303','202304'],
+      categories: tang_truong_cuoi_ky_xAxis,
       crosshair: true
     }],
     yAxis: [
@@ -100,7 +100,7 @@ Highcharts.chart('tang_truong_cuoi_ky', {
     legend: {
         align: 'center',
         verticalAlign: 'bottom',
-        
+        symbolRadius: 0
     },
     series: [{
       name: 'Tăng trưởng CK',

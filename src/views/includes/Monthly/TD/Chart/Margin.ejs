@@ -1,0 +1,12 @@
+<figure class="highcharts-figure">
+    <div id="Margin"></div>
+</figure>
+<script>
+     var currentYearMonthMargin =  <%- currentYearMonth %>
+</script>
+
+<script src="/Chart_script/Monthly/TIN_DUNG/<%=(KhoiQL=='TOAN_HANG')? 'Margin_Toan_hang.js' : 
+            (KhoiQL=='KHDN')? 'Margin_KHDN.js':
+            (KhoiQL=='KHDNL')? 'Margin_KHDNL.js':
+             'Margin.js'  %>">
+</script>

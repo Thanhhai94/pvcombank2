@@ -52,6 +52,7 @@ Highcharts.chart('LS_HD_Daily_CKH', {
 },
   series: [{
     dataLabels: {
+      allowOverlap:true,
       enabled:true,
       format: '{point.y:.2f}%'
     },

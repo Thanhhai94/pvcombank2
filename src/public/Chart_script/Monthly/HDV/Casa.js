@@ -15,7 +15,10 @@ Highcharts.chart('CASA', {
     enabled: false
   },
   xAxis: {
-      categories: ['202301','202302','202303','202304']
+      categories: currentYearMonthCasa,
+      labels: {
+        rotation: -90,
+      },
   },
   tooltip: {
     formatter: function () {

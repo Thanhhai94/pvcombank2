@@ -50,6 +50,7 @@ Highcharts.chart('QM_HDV_NKH_Daily', {
     opposite: true
   }],
   legend: {
+    symbolRadius: 0,
     shadow: false
   },
   tooltip: {

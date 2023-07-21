@@ -1,0 +1,21 @@
+<figure class="highcharts-figure">
+    <div id="Chi_phi_von"></div>
+</figure>
+<script>
+     var ArrayMonthCPV =  <%- ArrayMonth %>
+     var KhoiQL = <%= KhoiQL %>
+     
+</script>
+
+<script src="/Chart_script/Monthly/TIN_DUNG/<%=(KhoiQL=='TOAN_HANG')? 'Chi_phi_von_Toan_hang.js' : 
+            (KhoiQL=='KHDN')? 'Chi_phi_von_KHDN.js' : 
+            (KhoiQL=='KHDNL')? 'Chi_phi_von_KHDNL.js' : 
+            'Chi_phi_von.js'  %>">
+</script>
+
+
+<script>
+    
+</script>
+
+

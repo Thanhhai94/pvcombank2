@@ -4,6 +4,8 @@ import JobService from "../services/JobService"
 import dayjs from "dayjs";
 import handleListJob from "../utils/handleListJob";
 import getfromtodate from "../utils/getfromtodate";
+import handlerDateTime from "../utils/handlerDateTime"
+
 
 const getLogin = async (req,res) => {
   let allUser = await UserServices.getAllUser()
@@ -28,12 +30,14 @@ const loginPost = async (req, res) => {
   if(user && user.password == password){
     req.session.CIF = user.CIF;
     req.session.ruleReportDaily = user.Rule_Report_Daily
+    req.session.Rptdate = '20230701'
     let date = new Date(), y = date.getFullYear(), m = date.getMonth();
     let Rptdate = dayjs(new Date(y,m,1)).format("YYYYMMDD")
     let CIF = req.session.CIF
     let staff = await staffServices.getStaffInfo(CIF);
     let listjob = await JobService.getListJob(CIF,Rptdate);
     return res.render('homepage', {
+      Rptdate: handlerDateTime.selectMonth(),
       dateUrl: dateUrl,
       staff: staff,
       pageTitle: 'HomePage',

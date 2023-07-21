@@ -22,6 +22,9 @@ Highcharts.chart('TT_HDV_CKH_Daily', {
   exporting : {
     enabled: false
   },
+  legend: {
+    symbolRadius: 0
+  },
   title: {
     text: 'Tăng trưởng HĐV CKH',
     style: {

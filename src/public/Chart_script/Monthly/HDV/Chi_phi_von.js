@@ -58,7 +58,7 @@ Highcharts.chart('Chi_phi_von', {
         }
       },
     xAxis: [{
-      categories: ['20221231','20230131','20230228','20230331','20230430'],
+      categories: ArrayMonthCPV,
       crosshair: true
     }],
     yAxis: [
@@ -99,7 +99,7 @@ Highcharts.chart('Chi_phi_von', {
     legend: {
         align: 'center',
         verticalAlign: 'bottom',
-        
+        symbolRadius: 0
     },
     series: [{
       
@@ -155,5 +155,6 @@ Highcharts.chart('Chi_phi_von', {
         y: -10,
         format: '{point.y:,.1f}%'
       }
-    }]
+    },
+  ]
   });

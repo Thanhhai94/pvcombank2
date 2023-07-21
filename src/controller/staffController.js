@@ -3,6 +3,7 @@ import JobService from "../services/JobService"
 import handleListJob from "../utils/handleListJob";
 import dayjs from "dayjs";
 import getfromtodate from "../utils/getfromtodate";
+import handlerDateTime from "../utils/handlerDateTime"
 
 const getListStaff = async (req, res) => {
   let CIF = req.session.CIF
@@ -25,6 +26,7 @@ const getStaffInfo = async(req,res) => {
   let listjob = await JobService.getListJob(CIF,Rptdate);
   if(staff) {
     return res.render("homepage",{
+      Rptdate: handlerDateTime.selectMonth(),
       dateUrl: dateUrl,
       staff: staff,
       pageTitle: 'HomePage',

@@ -16,10 +16,11 @@
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
 
 </head>
-<body>
+<body class="<%= (homepage ==='homepage') ? 'homepage' : '' %>" >
     <%- include('includes/navigation.ejs') %>
-    <%- include('includes/Monthly/navigationMonthly.ejs') %>
-    <%- include('includes/Monthly/HDV/HDV.ejs') %>
+    <%- (homepage === 'homepage') ?'': include('includes/Monthly/navigationMonthly.ejs') %>
+    <%- (homepage ==='homepage') ? include('includes/Monthly/homepage.ejs') :(Loaichitieu ==='HDV'? include('includes/Monthly/HDV/HDV.ejs') : (Loaichitieu ==='TIN_DUNG') ? include('includes/Monthly/TD/TIN_DUNG.ejs') : (Loaichitieu ==='Khach_hang') ? include('includes/Monthly/KH/Khach_hang.ejs') : '') %>
+    
 <%- include('includes/end.ejs') %>
 
 

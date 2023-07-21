@@ -58,7 +58,7 @@ Highcharts.chart('tang_truong_BQ', {
         }
       },
     xAxis: [{
-      categories: ['202301','202302','202303','202304'],
+      categories: Tang_truong_BQ_xAxis,
       crosshair: true
     }],
     yAxis: [
@@ -100,7 +100,7 @@ Highcharts.chart('tang_truong_BQ', {
     legend: {
         align: 'center',
         verticalAlign: 'bottom',
-        
+        symbolRadius: 0
     },
     series: [{
       name: 'Tăng trưởng BQ',

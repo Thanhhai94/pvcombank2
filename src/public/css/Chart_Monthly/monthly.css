@@ -1,3 +1,7 @@
+.homepage {
+    background-color: rgb(180, 177, 177);
+}
+
 /* #navigationMonthly {
     position: fixed; 
     top: 46px; 
@@ -259,6 +263,15 @@ nav ul ul ul li {
     width: 100%;
 }
 
+#quymobinhquan .active {
+    background-color: yellow;
+}
+
+nav .activeNav {
+        background-color: var(--color-background);
+        color: var(--color-bl);
+}
+
 #quymobinhquan .row .col-4 p {
     background: rgb(251, 133, 0);
     margin-top: 10px;
@@ -292,3 +305,4 @@ nav ul ul ul li {
 #quymobinhquan .col-12 .col-6 .value {
     text-align: center;
 }
+

@@ -58,7 +58,7 @@ Highcharts.chart('Margin', {
         }
       },
     xAxis: [{
-      categories: ['20230131','20230228','20230331','20230430'],
+      categories: currentYearMonthMargin,
       crosshair: true
     }],
     yAxis: [
@@ -99,7 +99,7 @@ Highcharts.chart('Margin', {
     legend: {
         align: 'center',
         verticalAlign: 'bottom',
-        
+        symbolRadius: 0
     },
     series: [{
       

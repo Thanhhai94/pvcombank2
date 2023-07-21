@@ -1,4 +1,4 @@
-let data = [9.6, 9.6, 9.4, 9.4]
+let data = [9.6, 9.6, 9.4, 9.4,9.5,9.6]
 
 const getMax = (data) => {
   let max = data[0] || 0
@@ -32,7 +32,8 @@ credits: {
   enabled: false
 },
   legend: {
-  enabled: false
+  enabled: false,
+  
 },
 exporting : {
   enabled: false
@@ -45,11 +46,11 @@ exporting : {
       },
   },
   xAxis: {
-      categories: ['202301','202302','202303','202304'],
+      categories: currentYearMonthHDVOnline,
       crosshair: true,
-      accessibility: {
-          description: 'Countries'
-      }
+      labels: {
+        rotation: -90,
+      },
   },
    yAxis: {
     max: max,

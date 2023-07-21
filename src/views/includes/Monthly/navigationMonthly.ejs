@@ -1,7 +1,12 @@
 
 <div id="navigationMonthly">
     <div>
-        <p style="line-height: 42px; font-size: 20px; font-weight: 600; color: var(--color-bl);">BÁO CÁO HUY ĐỘNG VỐN</p>
+        <p style="line-height: 42px; font-size: 18px; font-weight: 600; color: var(--color-bl);">
+        BÁO CÁO <%=(Loaichitieu=='HDV')?'HUY ĐỘNG VỐN':(Loaichitieu == 'TIN_DUNG')?'TÍN DỤNG':(Loaichitieu=='Khach_hang')?'KHÁCH HÀNG' : ''%>
+            <%=(KhoiQL == 'TOAN_HANG')?'- TOÀN HÀNG': (KhoiQL == '')?'':` - ${KhoiQL}`%> 
+            - <%=RptdateTitle%> 
+            <%=(NhomKH=='TOAN_HANG' || NhomKH=='')?'':(NhomKH == 'TONG_KHOI')?'TỔNG KHỐI': `- ${NhomKH}`%>
+        </p>
     </div>
     <div>
         <%- include('navigationSelection.ejs') %>
@@ -27,9 +32,10 @@
     today: 'Today',
     clear: 'Clear',
     firstDay: 1},
-//     onSelect({date}) {
-//     let day = dayjs(date).format('YYYYMMDD')
-//     return window.location.href = `/DScongviec/${day}`
-//    }
+    onSelect({date}) {
+    var  y = date.getFullYear(), mo = date.getMonth();
+    let selectMonth = dayjs(new Date(y,mo+1,0,7,0,0)).format("YYYYMMDD")
+    return window.location.href = `/monthly?Rptdate=${selectMonth}&Kyhan=<%=Kyhan%>&Loaichitieu=<%=Loaichitieu%>&KhoiQL=<%=KhoiQL%>&NhomKH=<%=NhomKH%>`
+   }
 })
 </script>

@@ -11,17 +11,20 @@
                     <div class="row">
                         <div class="col-4">
                             <div style="width: 100%;">
-                                <input type="button" value="Tổng">
+                                <input onclick="window.location.href='/monthly?Rptdate=<%=Rptdate%>&Kyhan=All&Loaichitieu=<%=Loaichitieu%>&KhoiQL=<%=KhoiQL%>&NhomKH=<%=NhomKH%>'" 
+                                class="<%= (Kyhan ==='All'? 'active' : '') %>" type="button" value="Tổng">
                             </div>
                         </div>
                         <div class="col-4">
                             <div style="width: 100%;">
-                                <input type="button" value="CKH">
+                                <input onclick="window.location.href='/monthly?Rptdate=<%=Rptdate%>&Kyhan=CKH&Loaichitieu=<%=Loaichitieu%>&KhoiQL=<%=KhoiQL%>&NhomKH=<%=NhomKH%>'" 
+                                class="<%= (Kyhan ==='CKH'? 'active' : '') %>" type="button" value="CKH">
                             </div>
                         </div>
                         <div class="col-4">
                             <div style="width: 100%;">
-                                <input type="button" value="KKH">
+                                <input onclick="window.location.href='/monthly?Rptdate=<%=Rptdate%>&Kyhan=KKH&Loaichitieu=<%=Loaichitieu%>&KhoiQL=<%=KhoiQL%>&NhomKH=<%=NhomKH%>'" 
+                                class="<%= (Kyhan ==='KKH'? 'active' : '') %>" type="button" value="KKH">
                             </div>
                         </div>
                     </div>

@@ -48,6 +48,7 @@ Highcharts.chart('daily_dashboard_TD_chart_2', {
   },
   series: [{
     dataLabels: {
+      allowOverlap:true,
       enabled:true,
       format: '{point.y:.2f}%'
     },

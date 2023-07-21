@@ -19,6 +19,9 @@ Highcharts.chart('TT_HDV_KKH_Daily', {
     },
     shared: true
 },
+legend: {
+  symbolRadius: 0
+},
   exporting : {
     enabled: false
   },

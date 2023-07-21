@@ -1,0 +1,546 @@
+<style>
+    .monthly a:hover{
+        color: #F0A7A0;
+    }
+</style>
+
+<div  class="container-fluid monthly" style="position: absolute; padding-bottom: 50px;" <%= ruleReportDaily == 'ALL' ? '' : 'hidden' %>>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p style="    float: left;
+                font-size: 20px;
+                color: var(--color-bl);
+                font-weight: 600;">DANH MỤC BÁO CÁO THÁNG</p>
+            </div>
+        </div>
+        <div class="row" style="">
+            <div class="col-1" style="border: 1px solid rgb(180, 177, 177);
+                                    justify-content: center;
+                                    background: #0081A7;
+                                    display: flex;
+                                    padding: 0;
+                                    align-items: center">
+                <p style="margin-bottom: 0; color: #FFFFFF;">Toàn hàng</p>
+            </div>
+            <div class="col-11" >
+                <div class="row">
+                    <div class="col-2" style="border: 1px solid rgb(180, 177, 177);
+                                            justify-content: center;
+                                            background: #00AFB9;
+                                            display: flex;
+                                            padding: 0;
+                                            align-items: center">
+                        <p style="margin-bottom: 0; color: #FFFFFF;">Chỉ tiêu tín dụng</p>
+                    </div>
+                    <div class="col-10">
+                        <div class="row">
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;"><a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=All&Loaichitieu=TIN_DUNG&KhoiQL=TOAN_HANG&NhomKH=TOAN_HANG"><i class="fa-solid fa-hand-point-right"></i>Báo cáo Toàn hàng</a></div>
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;"><a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=All&Loaichitieu=TIN_DUNG&KhoiQL=KHCN&NhomKH=TOAN_HANG"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHCN</a></div>
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;">
+                                <ul style="margin-bottom: 0; padding: 10px 0px; list-style: none;">
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=All&Loaichitieu=TIN_DUNG&KhoiQL=KHDN&NhomKH=TONG_KHOI"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDN - ALL</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=All&Loaichitieu=TIN_DUNG&KhoiQL=KHDN&NhomKH=Core"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDN - Core</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=All&Loaichitieu=TIN_DUNG&KhoiQL=KHDN&NhomKH=Upper"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDN - Upper</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;">
+                                <ul style="margin-bottom: 0; padding: 10px 0px; list-style: none;">
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=All&Loaichitieu=TIN_DUNG&KhoiQL=KHDNL&NhomKH=TONG_KHOI"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDNL - ALL</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=All&Loaichitieu=TIN_DUNG&KhoiQL=KHDNL&NhomKH=PVN"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDNL - PVN</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=All&Loaichitieu=TIN_DUNG&KhoiQL=KHDNL&NhomKH=Non_PVN"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDNL - Non_PVN</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2" style="border: 1px solid rgb(180, 177, 177);
+                                            justify-content: center;
+                                            background: #00AFB9;
+                                            display: flex;
+                                            padding: 0;
+                                            align-items: center">
+                        <p style="margin-bottom: 0; color: #FFFFFF;">Chỉ tiêu Huy động vốn</p>
+                    </div>
+                    <div class="col-10">
+                        <div class="row">
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;"><a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=All&Loaichitieu=HDV&KhoiQL=TOAN_HANG&NhomKH=TOAN_HANG"><i class="fa-solid fa-hand-point-right"></i>Báo cáo Toàn hàng</a></div>
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;"><a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=All&Loaichitieu=HDV&KhoiQL=KHCN&NhomKH=TOAN_HANG"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHCN</a></div>
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;">
+                                <ul style="margin-bottom: 0; padding: 10px 0px; list-style: none;">
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=All&Loaichitieu=HDV&KhoiQL=KHDN&NhomKH=TONG_KHOI"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDN - ALL</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=All&Loaichitieu=HDV&KhoiQL=KHDN&NhomKH=Core"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDN - Core</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=All&Loaichitieu=HDV&KhoiQL=KHDN&NhomKH=Upper"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDN - Upper</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;">
+                                <ul style="margin-bottom: 0; padding: 10px 0px; list-style: none;">
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=All&Loaichitieu=HDV&KhoiQL=KHDNL&NhomKH=TONG_KHOI"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDNL - ALL</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=All&Loaichitieu=HDV&KhoiQL=KHDNL&NhomKH=PVN"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDNL - PVN</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=All&Loaichitieu=HDV&KhoiQL=KHDNL&NhomKH=Non_PVN"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDNL - Non_PVN</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" >
+                    <div class="col-2" style="border: 1px solid rgb(180, 177, 177);
+                                            justify-content: center;
+                                            background: #00AFB9;
+                                            display: flex;
+                                            padding: 0;
+                                            align-items: center;
+                                            min-height: 42px;">
+                        <p style="margin-bottom: 0; color: #FFFFFF;">Chỉ tiêu khách hàng</p>
+                    </div>
+                    <div class="col-10">
+                        <div class="row">
+                            <div class="col-12" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: left;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;">
+                                <a style="margin-left:50px; font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=All&Loaichitieu=Khach_hang&KhoiQL=&NhomKH="><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHCN</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        
+        </div>
+
+        <div class="row" style="">
+            <div class="col-1" style="border: 1px solid rgb(180, 177, 177);
+                                    justify-content: center;
+                                    background: #0081A7;
+                                    display: flex;
+                                    padding: 0;
+                                    align-items: center">
+                <p style="margin-bottom: 0; color: #FFFFFF;">CKH</p>
+            </div>
+            <div class="col-11" >
+                <div class="row">
+                    <div class="col-2" style="border: 1px solid rgb(180, 177, 177);
+                                            justify-content: center;
+                                            background: #00AFB9;
+                                            display: flex;
+                                            padding: 0;
+                                            align-items: center">
+                        <p style="margin-bottom: 0; color: #FFFFFF;">Chỉ tiêu tín dụng</p>
+                    </div>
+                    <div class="col-10">
+                        <div class="row">
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;"><a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=CKH&Loaichitieu=TIN_DUNG&KhoiQL=TOAN_HANG&NhomKH=TOAN_HANG"><i class="fa-solid fa-hand-point-right"></i>Báo cáo Toàn hàng</a></div>
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;"><a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=CKH&Loaichitieu=TIN_DUNG&KhoiQL=KHCN&NhomKH=TOAN_HANG"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHCN</a></div>
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;">
+                                <ul style="margin-bottom: 0; padding: 10px 0px; list-style: none;">
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=CKH&Loaichitieu=TIN_DUNG&KhoiQL=KHDN&NhomKH=TONG_KHOI"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDN - ALL</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=CKH&Loaichitieu=TIN_DUNG&KhoiQL=KHDN&NhomKH=Core"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDN - Core</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=CKH&Loaichitieu=TIN_DUNG&KhoiQL=KHDN&NhomKH=Upper"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDN - Upper</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;">
+                                <ul style="margin-bottom: 0; padding: 10px 0px; list-style: none;">
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=CKH&Loaichitieu=TIN_DUNG&KhoiQL=KHDNL&NhomKH=TONG_KHOI"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDNL - ALL</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=CKH&Loaichitieu=TIN_DUNG&KhoiQL=KHDNL&NhomKH=PVN"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDNL - PVN</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=CKH&Loaichitieu=TIN_DUNG&KhoiQL=KHDNL&NhomKH=Non_PVN"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDNL - Non_PVN</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2" style="border: 1px solid rgb(180, 177, 177);
+                                            justify-content: center;
+                                            background: #00AFB9;
+                                            display: flex;
+                                            padding: 0;
+                                            align-items: center">
+                        <p style="margin-bottom: 0; color: #FFFFFF;">Chỉ tiêu Huy động vốn</p>
+                    </div>
+                    <div class="col-10">
+                        <div class="row">
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;"><a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=CKH&Loaichitieu=HDV&KhoiQL=TOAN_HANG&NhomKH=TOAN_HANG"><i class="fa-solid fa-hand-point-right"></i>Báo cáo Toàn hàng</a></div>
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;"><a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=CKH&Loaichitieu=HDV&KhoiQL=KHCN&NhomKH=TOAN_HANG"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHCN</a></div>
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;">
+                                <ul style="margin-bottom: 0; padding: 10px 0px; list-style: none;">
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=CKH&Loaichitieu=HDV&KhoiQL=KHDN&NhomKH=TONG_KHOI"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDN - ALL</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=CKH&Loaichitieu=HDV&KhoiQL=KHDN&NhomKH=Core"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDN - Core</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=CKH&Loaichitieu=HDV&KhoiQL=KHDN&NhomKH=Upper"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDN - Upper</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;">
+                                <ul style="margin-bottom: 0; padding: 10px 0px; list-style: none;">
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=CKH&Loaichitieu=HDV&KhoiQL=KHDNL&NhomKH=TONG_KHOI"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDNL - ALL</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=CKH&Loaichitieu=HDV&KhoiQL=KHDNL&NhomKH=PVN"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDNL - PVN</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=CKH&Loaichitieu=HDV&KhoiQL=KHDNL&NhomKH=Non_PVN"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDNL - Non_PVN</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" >
+                    <div class="col-2" style="border: 1px solid rgb(180, 177, 177);
+                                            justify-content: center;
+                                            background: #00AFB9;
+                                            display: flex;
+                                            padding: 0;
+                                            align-items: center;
+                                            min-height: 42px;">
+                        <p style="margin-bottom: 0; color: #FFFFFF;">Chỉ tiêu khách hàng</p>
+                    </div>
+                    <div class="col-10">
+                        <div class="row">
+                            <div class="col-12" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: left;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;">
+                                <a style="margin-left:50px; font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=CKH&Loaichitieu=Khach_hang&KhoiQL=&NhomKH="><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHCN</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        
+        </div>
+
+        <div class="row" style="">
+            <div class="col-1" style="border: 1px solid rgb(180, 177, 177);
+                                    justify-content: center;
+                                    background: #0081A7;
+                                    display: flex;
+                                    padding: 0;
+                                    align-items: center">
+                <p style="margin-bottom: 0; color: #FFFFFF;">KKH</p>
+            </div>
+            <div class="col-11" >
+                <div class="row">
+                    <div class="col-2" style="border: 1px solid rgb(180, 177, 177);
+                                            justify-content: center;
+                                            background: #00AFB9;
+                                            display: flex;
+                                            padding: 0;
+                                            align-items: center">
+                        <p style="margin-bottom: 0; color: #FFFFFF;">Chỉ tiêu tín dụng</p>
+                    </div>
+                    <div class="col-10">
+                        <div class="row">
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;"><a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=KKH&Loaichitieu=TIN_DUNG&KhoiQL=TOAN_HANG&NhomKH=TOAN_HANG"><i class="fa-solid fa-hand-point-right"></i>Báo cáo Toàn hàng</a></div>
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;"><a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=KKH&Loaichitieu=TIN_DUNG&KhoiQL=KHCN&NhomKH=TOAN_HANG"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHCN</a></div>
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;">
+                                <ul style="margin-bottom: 0; padding: 10px 0px; list-style: none;">
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=KKH&Loaichitieu=TIN_DUNG&KhoiQL=KHDN&NhomKH=TONG_KHOI"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDN - ALL</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=KKH&Loaichitieu=TIN_DUNG&KhoiQL=KHDN&NhomKH=Core"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDN - Core</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=KKH&Loaichitieu=TIN_DUNG&KhoiQL=KHDN&NhomKH=Upper"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDN - Upper</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;">
+                                <ul style="margin-bottom: 0; padding: 10px 0px; list-style: none;">
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=KKH&Loaichitieu=TIN_DUNG&KhoiQL=KHDNL&NhomKH=TONG_KHOI"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDNL - ALL</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=KKH&Loaichitieu=TIN_DUNG&KhoiQL=KHDNL&NhomKH=PVN"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDNL - PVN</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=KKH&Loaichitieu=TIN_DUNG&KhoiQL=KHDNL&NhomKH=Non_PVN"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDNL - Non_PVN</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2" style="border: 1px solid rgb(180, 177, 177);
+                                            justify-content: center;
+                                            background: #00AFB9;
+                                            display: flex;
+                                            padding: 0;
+                                            align-items: center">
+                        <p style="margin-bottom: 0; color: #FFFFFF;">Chỉ tiêu Huy động vốn</p>
+                    </div>
+                    <div class="col-10">
+                        <div class="row">
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;"><a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=KKH&Loaichitieu=HDV&KhoiQL=TOAN_HANG&NhomKH=TOAN_HANG"><i class="fa-solid fa-hand-point-right"></i>Báo cáo Toàn hàng</a></div>
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;"><a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=KKH&Loaichitieu=HDV&KhoiQL=KHCN&NhomKH=TOAN_HANG"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHCN</a></div>
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;">
+                                <ul style="margin-bottom: 0; padding: 10px 0px; list-style: none;">
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=KKH&Loaichitieu=HDV&KhoiQL=KHDN&NhomKH=TONG_KHOI"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDN - ALL</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=KKH&Loaichitieu=HDV&KhoiQL=KHDN&NhomKH=Core"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDN - Core</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=KKH&Loaichitieu=HDV&KhoiQL=KHDN&NhomKH=Upper"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDN - Upper</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-3" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: center;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;">
+                                <ul style="margin-bottom: 0; padding: 10px 0px; list-style: none;">
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=KKH&Loaichitieu=HDV&KhoiQL=KHDNL&NhomKH=TONG_KHOI"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDNL - ALL</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=KKH&Loaichitieu=HDV&KhoiQL=KHDNL&NhomKH=PVN"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDNL - PVN</a>
+                                    </li>
+                                    <li>
+                                        <a style="font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=KKH&Loaichitieu=HDV&KhoiQL=KHDNL&NhomKH=Non_PVN"><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHDNL - Non_PVN</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" >
+                    <div class="col-2" style="border: 1px solid rgb(180, 177, 177);
+                                            justify-content: center;
+                                            background: #00AFB9;
+                                            display: flex;
+                                            padding: 0;
+                                            align-items: center;
+                                            min-height: 42px;">
+                        <p style="margin-bottom: 0; color: #FFFFFF;">Chỉ tiêu khách hàng</p>
+                    </div>
+                    <div class="col-10">
+                        <div class="row">
+                            <div class="col-12" style="border: 1px solid rgb(180, 177, 177);
+                            justify-content: left;
+                            background: #FDFCDC;
+                            display: flex;
+                            padding: 0;
+                            align-items: center;
+                            min-height: 42px;">
+                                <a style="margin-left:50px; font-style: italic; font-size: 14px;" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=KKH&Loaichitieu=Khach_hang&KhoiQL=&NhomKH="><i class="fa-solid fa-hand-point-right"></i>Báo cáo KHCN</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        
+        </div>
+
+
+       
+
+</div>
+
+<style>
+    
+</style>

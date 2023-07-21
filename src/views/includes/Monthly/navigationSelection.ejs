@@ -1,61 +1,61 @@
 <nav>
     <ul>
-        <li><a href="#">Báo cáo tín dụng</a>
+        <li><a class="<%= (Loaichitieu ==='TIN_DUNG'? 'activeNav' : '') %>" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=TIN_DUNG&KhoiQL=TOAN_HANG%>&NhomKH=TOAN_HANG">Báo cáo tín dụng</a>
         <!-- First Tier Drop Down -->
         <ul>
-            <li><a href="#">Toàn hàng</a></li>
-            <li><a href="#">KHCN</a></li>
-            <li><a href="#">KHDN</a>
+            <li><a href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=TIN_DUNG&KhoiQL=TOAN_HANG&NhomKH=TOAN_HANG">Toàn hàng</a></li>
+            <li><a href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=TIN_DUNG&KhoiQL=KHCN&NhomKH=CN">KHCN</a></li>
+            <li><a href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=TIN_DUNG&KhoiQL=KHDN&NhomKH=TONG_KHOI">KHDN</a>
           <!-- Second Tier Drop Down -->
             <ul>
-                <li><a href="#">ALL</a></li>
-                <li><a href="#">Core</a></li>
-                <li><a href="#">Upper</a>
+                <li><a href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=TIN_DUNG&KhoiQL=KHDN&NhomKH=TONG_KHOI">ALL</a></li>
+                <li><a href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=TIN_DUNG&KhoiQL=KHDN&NhomKH=Core">Core</a></li>
+                <li><a href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=TIN_DUNG&KhoiQL=KHDN&NhomKH=Upper">Upper</a>
                    
                 </li>
             </ul>
             </li>
-            <li><a href="#">KHDNL</a>
+            <li><a href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=TIN_DUNG&KhoiQL=KHDNL&NhomKH=TONG_KHOI">KHDNL</a>
                 <!-- Second Tier Drop Down -->
                   <ul>
-                      <li><a href="#">ALL</a></li>
-                      <li><a href="#">PVN</a></li>
-                      <li><a href="">Non-PVN</a>
+                    <li><a href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=TIN_DUNG&KhoiQL=KHDNL&NhomKH=TONG_KHOI">ALL</a></li>
+                    <li><a href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=TIN_DUNG&KhoiQL=KHDNL&NhomKH=PVN">PVN</a></li>
+                    <li><a href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=TIN_DUNG&KhoiQL=KHDNL&NhomKH=Non_PVN">Non-PVN</a>
                          
                       </li>
                   </ul>
                   </li>
         </ul>
         </li>
-        <li><a href="#">Báo cáo HĐV</a>
-            <!-- First Tier Drop Down -->
-            <ul>
-                <li><a href="#">Toàn hàng</a></li>
-                <li><a href="#">KHCN</a></li>
-                <li><a href="#">KHDN</a>
-              <!-- Second Tier Drop Down -->
-                <ul>
-                    <li><a href="#">ALL</a></li>
-                    <li><a href="#">Core</a></li>
-                    <li><a href="#">Upper</a>
-                       
+        <li><a class="<%= (Loaichitieu ==='HDV'? 'activeNav' : '') %>" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=HDV&KhoiQL=TOAN_HANG&NhomKH=TOAN_HANG">Báo cáo HĐV</a>
+          <!-- First Tier Drop Down -->
+          <ul>
+              <li><a href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=HDV&KhoiQL=TOAN_HANG&NhomKH=TOAN_HANG">Toàn hàng</a></li>
+              <li><a href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=HDV&KhoiQL=KHCN&NhomKH=CN">KHCN</a></li>
+              <li><a href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=HDV&KhoiQL=KHDN&NhomKH=TONG_KHOI">KHDN</a>
+            <!-- Second Tier Drop Down -->
+              <ul>
+                  <li><a href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=HDV&KhoiQL=KHDN&NhomKH=TONG_KHOI">ALL</a></li>
+                  <li><a href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=HDV&KhoiQL=KHDN&NhomKH=Core">Core</a></li>
+                  <li><a href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=HDV&KhoiQL=KHDN&NhomKH=Upper">Upper</a>
+                     
+                  </li>
+              </ul>
+              </li>
+              <li><a href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=HDV&KhoiQL=KHDNL&NhomKH=TONG_KHOI">KHDNL</a>
+                  <!-- Second Tier Drop Down -->
+                    <ul>
+                      <li><a href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=HDV&KhoiQL=KHDNL&NhomKH=TONG_KHOI">ALL</a></li>
+                      <li><a href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=HDV&KhoiQL=KHDNL&NhomKH=PVN">PVN</a></li>
+                      <li><a href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=HDV&KhoiQL=KHDNL&NhomKH=Non_PVN">Non-PVN</a>
+                           
+                        </li>
+                    </ul>
                     </li>
-                </ul>
-                </li>
-                <li><a href="#">KHDNL</a>
-                    <!-- Second Tier Drop Down -->
-                      <ul>
-                          <li><a href="#">ALL</a></li>
-                          <li><a href="#">PVN</a></li>
-                          <li><a href="">Non-PVN</a>
-                             
-                          </li>
-                      </ul>
-                      </li>
-            </ul>
-            </li>
+          </ul>
+          </li>
             <li>
-                <a href="#">Báo cáo khách hàng</a>
+                <a class="<%= (Loaichitieu ==='Khach_hang'? 'activeNav' : '') %>" href="/monthly?Rptdate=<%=Rptdate%>&Kyhan=<%=Kyhan%>&Loaichitieu=Khach_hang&KhoiQL=&NhomKH=">Báo cáo khách hàng</a>
             </li>
         
     </ul>

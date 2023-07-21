@@ -10,6 +10,9 @@ Highcharts.setOptions({
       type: 'column',
       
     },
+    legend: {
+      symbolRadius: 0
+    },
     tooltip: {
       formatter: function () {
           return this.points.reduce(function (s, point) {
